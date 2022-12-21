@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    overflow: hidden;
     font-family: 'Cookie', cursive;
     font-display: block;
 }
@@ -51,11 +50,11 @@
     }
 
     50% {
-        transform: translateX(var(--width)) rotateY(0deg);
+        transform: translateX(calc(var(--width) - 300px)) rotateY(0deg);
     }
 
     51% {
-        transform: translateX(var(--width)) rotateY(180deg);
+        transform: translateX(calc(var(--width) - 300px)) rotateY(180deg);
     }
 
     99% {
@@ -111,12 +110,13 @@ body {
     margin-right: auto;
     /* background-color: rgb(109, 219, 255); */
     background: linear-gradient(0deg, #1488CC, #1921ae);
-    height: 100vh;
+    height: 100%;
     width: 100%;
     max-width: var(--width);
     padding: 0;
     position: relative;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .ground {

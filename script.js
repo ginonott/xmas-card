@@ -119,12 +119,14 @@ particlesJS("particles-js", {
   };
   requestAnimationFrame(update);
   
-  document.body.onclick = () => window.location.reload()
+//   document.body.onclick = () => window.location.reload()
+  document.body.height = window.innerHeight;
 
-  const container = document.querySelector('.container');
-  container.style.height = window.document.body.getBoundingClientRect().height;
 
-  const audio = new Audio("/assets/jingle_bells.mp3");
-audio.play().catch(e => {
-    console.error(e);
-})
+
+function playMusic() {
+    const audio = new Audio("/assets/jingle_bells.mp3");
+    audio.play().catch(e => {
+        console.error(e);
+    })
+}
