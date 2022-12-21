@@ -1,25 +1,42 @@
 const elements = document.querySelectorAll('[data-repeat]');
-const maxWidth = parseInt(getComputedStyle(document.body).getPropertyValue('--width').split('px')[0]);
+const maxWidth = parseInt(getComputedStyle(document.body).getPropertyValue('--width').split('px')[0]) - 200;
+
+function getRandRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
 
 for (const e of elements) {
-    const repeat = parseInt(e.dataset.repeat);
-    const offset = parseInt(e.dataset.offset);
-    const random = e.dataset.random ? parseFloat(e.dataset.random) : 1;
+    const minX = e.dataset.repeatXRangeMin ? parseInt(e.dataset.repeatXRangeMin) : 0;
+    const maxX = e.dataset.repeatXRangeMax ? parseInt(e.dataset.repeatXRangeMax) : 200;
+    const minY = e.dataset.repeatYRangeMin ? parseInt(e.dataset.repeatYRangeMin) : 0;
+    const maxY = e.dataset.repeatYRangeMax ? parseInt(e.dataset.repeatYRangeMax) : 0;
+    const yProperty = e.dataset.repeatYProperty || 'bottom';
+
     const parent = e.parentNode;
 
-    for(let i = 0; i < repeat; i++) {
-        if (Math.random() > random) {
-            continue;
-        }
+    // remove the original element
+    parent.removeChild(e);
 
+    for (let x = 0; x < maxWidth; x = getRandRange(minX + x, maxX + minX + x)) {
+        const y = -1 * getRandRange(minY, maxY);
         const clone = e.cloneNode(true);
-        const [left] = clone.style.left.split('px');
-        const newLeft = parseInt(left) + (offset * i);
-        clone.style.left = `${newLeft}px`;
-        if (maxWidth < newLeft) {
-            break;
-        }
+        clone.style.left = `${x}px`;
+        clone.style[yProperty] = `${y}px`;
+        parent.appendChild(clone);
 
+    }
+}
+
+const tileElements = document.querySelectorAll('[data-tile]');
+for (const e of tileElements) {
+    const tiles = e.dataset.tile;
+    const offset = e.dataset.offset;
+    const parent = e.parentElement;
+    for (let i = 1; i < tiles; i++) {
+        const clone = e.cloneNode(true);
+        const left = parseInt((clone.style.left ?? '0px').split('px')[0]);
+        const newLeft = left + (i * offset);
+        clone.style.left = `${newLeft}px`;
         parent.appendChild(clone);
     }
 }
@@ -93,45 +110,6 @@ particlesJS("particles-js", {
         }
       }
     },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: {
-          enable: false,
-          mode: "bubble"
-        },
-        onclick: {
-          enable: true,
-          mode: "repulse"
-        },
-        resize: true
-      },
-      modes: {
-        grab: {
-          distance: 400,
-          line_linked: {
-            opacity: 0.5
-          }
-        },
-        bubble: {
-          distance: 400,
-          size: 4,
-          duration: 0.3,
-          opacity: 1,
-          speed: 3
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4
-        },
-        push: {
-          particles_nb: 4
-        },
-        remove: {
-          particles_nb: 2
-        }
-      }
-    },
     retina_detect: true
   });
 
@@ -142,3 +120,6 @@ particlesJS("particles-js", {
   requestAnimationFrame(update);
   
   document.body.onclick = () => window.location.reload()
+
+  const container = document.querySelector('.container');
+  container.style.height = window.document.body.getBoundingClientRect().height;

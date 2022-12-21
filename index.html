@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1280px, height=device-height, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>Merry Christmas!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,11 @@
 </head>
 
 <body>
+    <div style="position: fixed; width: 100vw; text-align: center; z-index: 9999;">
+        <p style="font-size: 5rem;">
+            Merry Christmas!
+        </p>
+    </div>
     <div class="container">
         <!-- merry christmas! -->
         <div class="border">
@@ -94,102 +99,97 @@
                 <li></li>
                 <li></li>
               </ul>
-              <p style="font-size: 5rem;">
-                Merry Christmas!
-            </p>
         </div>
         
         <!-- trees -->
-        <div class="on-ground z1">
+        <div class="on-ground" style="position: absolute; left: 0px;" data-repeat data-repeat-x-range-min="125" data-repeat-x-range-max="150" data-repeat-y-range-min="0" data-repeat-y-range-max="50">
             <img src="assets/snow_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground" style="left: 70px">
-            <img src="assets/snowy_tree.png" alt="">
-        </div>
-        <div class="on-ground z1" style="left: 130px">
-            <img src="assets/snowy_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground-low" style="left: 200px; bottom: -50px;">
-            <img src="assets/snow_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 275px">
-            <img src="assets/snowy_tree.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 330px;">
-            <img src="assets/snow_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 460px;">
-            <img src="assets/trunk_1.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 475px">
-            <img src="assets/snowy_tree.png" alt="">
-        </div>
-        <div class="on-ground" style="left: 580px;">
-            <img src="assets/trunk_tall.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 615px">
-            <img src="assets/snowy_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground-low" style="left: 650px; bottom: -50px;">
-            <img src="assets/snow_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 760px;">
-            <img src="assets/trunk_1.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 830px;">
-            <img src="assets/snow_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 935px; bottom: -30px;">
-            <img src="assets/snow_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground z2" style="left: 1020px">
-            <img src="assets/snowy_tree.png" alt="">
-        </div>
-        <div class="on-ground" style="left: 1070px">
-            <img src="assets/snowy_tree_tall.png" alt="">
-        </div>
-        <div class="on-ground z1" style="left: 1200px;">
-            <img src="assets/trunk_1.png" alt="">
         </div>
 
-        <!-- rocks -->
-        <div class="on-ground z0" style="left: 30px;">
-            <img src="assets/rockFormationLarge.png" alt="">
+        <div class="on-ground z1" style="position: absolute; left: 0px;" data-repeat data-repeat-x-range-min="300" data-repeat-x-range-max="350" data-repeat-y-range-min="0" data-repeat-y-range-max="50">
+            <img src="assets/snow_tree_tall.png" alt="">
         </div>
-        <div class="on-ground-low" style="left: 900px;">
+
+        <div class="on-ground z2" style="position: absolute; left: 0px;" data-repeat data-repeat-x-range-min="200" data-repeat-x-range-max="275" data-repeat-y-range-min="0" data-repeat-y-range-max="10">
+            <img src="assets/snowy_tree.png" alt="">
+        </div>
+
+        <div class="on-ground z1" style="position: absolute; left: 0px;" data-repeat data-repeat-x-range-min="100" data-repeat-x-range-max="300" data-repeat-y-range-min="0" data-repeat-y-range-max="10">
+            <img src="assets/snowy_tree.png" alt="">
+        </div>
+
+        <div class="on-ground z3" style="position: absolute; left: 0px;" data-repeat data-repeat-x-range-min="150" data-repeat-x-range-max="250" data-repeat-y-range-min="0" data-repeat-y-range-max="10">
+            <img src="assets/snowy_tree_tall.png" alt="">
+        </div>
+        
+
+        <!-- rocks -->
+        <div class="on-ground z0" style="position: absolute; left: 0px;" data-repeat data-repeat-x-range-min="150" data-repeat-x-range-max="250" data-repeat-y-range-min="0" data-repeat-y-range-max="20">
             <img src="assets/rockFormationLarge.png" alt="">
         </div>
 
         <!-- snowman -->
-        <div class="on-ground" style="left: 800px">
+        <div class="on-ground z3" style="left: 800px">
             <img src="assets/snowman.png" alt="">
         </div>
 
+        <!-- balloons -->
+        <div class="balloon" style="left: 0px;" data-repeat data-repeat-x-range-min="150" data-repeat-x-range-max="350" data-repeat-y-range-min="-200" data-repeat-y-range-max="-700" data-repeat-y-property="top">
+            <img src="assets/red_balloon.png" alt="">
+            <img src="assets/presentGreen.png">
+        </div>
+
+        <div class="balloon" style="left: 0px;" data-repeat data-repeat-x-range-min="250" data-repeat-x-range-max="500" data-repeat-y-range-min="-175" data-repeat-y-range-max="-700" data-repeat-y-property="top">
+            <img src="assets/balloon_blue.png" alt="">
+            <img src="assets/present.png">
+        </div>
+
         <!-- cabin -->
-        <div class="on-ground" style="left: 520px" data-repeat="10" data-offset="10">
+        <div class="on-ground z3" style="left: 520px" data-tile="10" data-offset="10">
             <img src="assets/cabinCorner.png" alt="">
         </div>
-        <div class="on-ground" style="left: 610px">
+        <div class="on-ground z3" style="left: 610px">
             <img src="assets/cabinWall.png" alt="">
         </div>
 
-        <div class="on-ground" style="left: 610px">
+        <div class="on-ground z4" style="left: 610px">
             <img src="assets/cabinDoor.png" alt="">
         </div>
-        <div class="on-ground z1" style="left: 520px; bottom: 90px">
+        <div class="on-ground z4" style="left: 520px; bottom: 90px">
             <img src="assets/cabinRoofCenter.png" alt="">
+        </div>
+        <div class="on-ground z4" style="left: 630px; bottom: 110px">
+            <img src="assets/wreath.png" alt="">
         </div>
 
         <!-- candy cane! -->
-        <div class="on-ground" style="left: 0px" data-repeat="100" data-offset="50" data-random="0.25">
+        <div class="on-ground" style="left: 0px; bottom: 30px;" data-repeat data-repeat-x-range-min="50" data-repeat-x-range-max="75" data-repeat-y-range-min="-5" data-repeat-y-range-max="-10">
             <img src="assets/candyCane.png" alt="">
         </div>
 
-        <!-- ground -->
+        <div class="on-ground z2 train" style="bottom: 15px;">
+            <img src="assets/trainWagon.png" >
+            <img src="assets/trainWagon.png" >
+            <img src="assets/trainWagonFlat.png" >
+            <img src="assets/trainWagon.png" >
+            <img src="assets/trainWagon.png" >
+            <img src="assets/trainTender.png">
+            <img src="assets/trainLocomotive.png" >
+        </div>
+
+        <!-- pile of presents -->
+        <div class="on-ground z5" style="left: 1840px; width: 100px; height: 100px;">
+            <img src="assets/present.png" style="position: absolute; bottom: 0px; right: 35px;">
+            <img src="assets/present.png" style="position: absolute; bottom: 0px; right: 0px;">
+            <img src="assets/presentGreen.png" style="position: absolute; bottom: 0px; right: 65px;">
+            <img src="assets/presentGreen.png" style="position: absolute; bottom: 25px; right: 10px;">
+            <img src="assets/present.png" style="position: absolute; bottom: 35px; right: 20px;">
+            <img src="assets/presentGreen.png" style="position: absolute; bottom: 45px; right: 5px;">
+        </div>
         <div class="ground"></div>
+        <div id="particles-js"></div>
     </div>
     <!-- particles.js container -->
-    <div id="particles-js"></div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>

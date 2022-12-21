@@ -6,14 +6,14 @@
 }
 
 ::-webkit-scrollbar {
-    background-color: transparent;
+    height: 2vh;
+    background-color: rgb(132, 79, 41);
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 15px;
     background: linear-gradient(45deg, white 25%, red 25.5%, red 50%, white 50.5%, white 75%, red 75.5%, red);
     background-size: 20px 20px;
-    max-width: 24px;
     background-clip: content-box;
 }
 
@@ -21,13 +21,88 @@
     --width: 2460px;
 }
 
+.balloon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: up-down 3s ease-in-out infinite;
+}
+
+.balloon > img:first-child {
+    object-fit: scale-down;
+    width: 100%;
+    height: 75%;
+    animation: 2s rotate infinite ease-in-out;
+}
+
+.balloon > img:last-child {
+    object-fit: scale-down;
+    width: 100%;
+    height: 25%;
+}
+
+.train {
+    animation: train 30s ease infinite;
+}
+
+@keyframes train {
+    0% {
+        transform: translate(-300px) rotateY(0deg);
+    }
+
+    50% {
+        transform: translateX(var(--width)) rotateY(0deg);
+    }
+
+    51% {
+        transform: translateX(var(--width)) rotateY(180deg);
+    }
+
+    99% {
+        transform: translateX(-300px) rotateY(180deg);
+    }
+
+    100% {
+        transform: translateX(-300px) rotateY(0deg);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-5deg)
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
 body {
-    min-width: 1280px;
     width: 100vw;
+    height: 100vh;
     padding: 0;
     margin: 0;
-    background: url("https://t4.ftcdn.net/jpg/02/31/25/87/360_F_231258741_I6mcbqulEv54o59bVz4oMKqO3wJ8f7xo.jpg");
+    background: rgb(132, 79, 41);
     text-align: center;
+    overflow-y: hidden;
 }
 
 .container {
@@ -38,8 +113,8 @@ body {
     background: linear-gradient(0deg, #1488CC, #1921ae);
     height: 100vh;
     width: 100%;
+    max-width: var(--width);
     padding: 0;
-    max-width: 1280px;
     position: relative;
     overflow-x: scroll;
 }
@@ -86,12 +161,18 @@ body {
     z-index: 3;
 }
 
+.z4 {
+    z-index: 4;
+}
+
+.z5 {
+    z-index: 5;
+}
 
 #particles-js {
     position: absolute;
-    width: 100vw;
-    min-width: 1280px;
-    height: 100%;
+    width: var(--width);
+    height: 100vh;
     z-index: 10;
     top: 0;
     pointer-events: none;
