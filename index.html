@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" onclick="playMusic()">
         <!-- merry christmas! -->
-        <div style="position: fixed; width: 100vw; text-align: center; z-index: 9999;" onclick="playMusic()">
+        <div style="position: fixed; width: 100vw; text-align: center; z-index: 9999; pointer-events: none;" >
             <p style="font-size: 5rem;">
                 Merry Christmas!<br>
                 (Click me!)
@@ -138,12 +138,12 @@
 
         <!-- balloons -->
         <div class="balloon" style="left: 0px;" data-repeat data-repeat-x-range-min="150" data-repeat-x-range-max="350" data-repeat-y-range-min="-200" data-repeat-y-range-max="-700" data-repeat-y-property="top">
-            <img src="assets/red_balloon.png" alt="">
+            <img src="assets/red_balloon.png" style="cursor: crosshair;" alt="">
             <img src="assets/presentGreen.png">
         </div>
 
-        <div class="balloon" style="left: 0px;" data-repeat data-repeat-x-range-min="250" data-repeat-x-range-max="500" data-repeat-y-range-min="-175" data-repeat-y-range-max="-700" data-repeat-y-property="top">
-            <img src="assets/balloon_blue.png" alt="">
+        <div class="balloon" style="left: 0px; cursor: crosshair;" data-repeat data-repeat-x-range-min="250" data-repeat-x-range-max="500" data-repeat-y-range-min="-175" data-repeat-y-range-max="-700" data-repeat-y-property="top">
+            <img src="assets/balloon_blue.png" style="cursor: crosshair;" alt="">
             <img src="assets/present.png">
         </div>
 
@@ -170,7 +170,7 @@
             <img src="assets/candyCane.png" alt="">
         </div>
 
-        <div class="on-ground z2 train" style="bottom: 15px;">
+        <div class="on-ground z2 train" style="bottom: 15px;" onclick="trainWhistle()">
             <img src="assets/trainWagon.png" >
             <img src="assets/trainWagon.png" >
             <img src="assets/trainWagonFlat.png" >

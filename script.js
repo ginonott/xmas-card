@@ -120,10 +120,41 @@ particlesJS("particles-js", {
   requestAnimationFrame(update);
 
 
-
+const audio = new Audio("/assets/jingle_bells.mp3");
+audio.loop = true;
+let startedMusic = false;
 function playMusic() {
-    const audio = new Audio("/assets/jingle_bells.mp3");
-    audio.play().catch(e => {
-        console.error(e);
-    })
+    if (startedMusic) {
+        return;
+    }
+
+    startedMusic = true;
+    audio.play();
+}
+
+const balloonPop = new Audio("/assets/balloon_pop.wav");
+balloonPop.volume = 0.5;
+
+for (const element of document.querySelectorAll('.balloon')) {
+    element.onclick = () => {
+        balloonPop.play();
+        imgs = element.querySelectorAll('img');
+        imgs[0].style.visibility = 'hidden';
+        imgs[1].style.animation = 'fall 3s ease';
+        imgs[1].onanimationend = () => {
+            element.remove();
+        }
+    }
+}
+
+const trainWhistleSound = new Audio('/assets/train_whistle.wav')
+trainWhistleSound.volume = 0.5;
+function trainWhistle() {
+    trainWhistleSound.play();
+}
+
+document.querySelector('.container').style.height = `${window.innerHeight}px`;
+
+window.onresize = () => {
+    document.querySelector('.container').style.height = `${window.innerHeight}px`;
 }
