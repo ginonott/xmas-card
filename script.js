@@ -118,9 +118,6 @@ particlesJS("particles-js", {
     requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
-  
-//   document.body.onclick = () => window.location.reload()
-  document.body.height = window.innerHeight;
 
 
 
