@@ -123,3 +123,8 @@ particlesJS("particles-js", {
 
   const container = document.querySelector('.container');
   container.style.height = window.document.body.getBoundingClientRect().height;
+
+  const audio = new Audio("/assets/jingle_bells.mp3");
+audio.play().catch(e => {
+    console.error(e);
+})
