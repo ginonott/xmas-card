@@ -153,6 +153,12 @@ function trainWhistle() {
     trainWhistleSound.play();
 }
 
+for (const element of document.querySelectorAll('.snowtree-tall')) {
+    element.onclick = () => {
+        element.src = "/assets/snowy_tree_tall.png";
+    }
+}
+
 document.querySelector('.container').style.height = `${window.innerHeight}px`;
 
 window.onresize = () => {
