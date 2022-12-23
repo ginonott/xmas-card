@@ -414,6 +414,10 @@ button:hover {
     animation: slide-out 2s ease-in forwards;
   }
 
+  .slide-in {
+    animation: slide-out 2s ease-in backwards;
+  }
+
   @keyframes slide-out {
     0% {
         transform: translateY(0px);
@@ -445,7 +449,7 @@ button:hover {
     height: 100vh;
     pointer-events: none;
     overflow:hidden;
-    z-index: 21;
+    z-index: 20;
   }
 
   .checklist {
@@ -456,6 +460,8 @@ button:hover {
     max-height: 80vh;
     overflow-y: scroll;
     pointer-events: all;
+    color: red;
+    font-weight: bold;
   }
 
   .checklist::-webkit-scrollbar {
@@ -489,3 +495,139 @@ button:hover {
     left: 0px;
     vertical-align: middle;
  }
+  
+.cloud {
+    animation: move 5s infinite ease-in-out;
+}
+
+.cloud:nth-of-type(1) {
+    animation-duration: 2s;
+}
+
+.cloud:nth-of-type(2) {
+    animation-duration: 5s;
+    animation-direction: reverse;
+}
+
+.cloud:nth-of-type(3) {
+    animation-duration: 3.5s;
+}
+
+.cloud:nth-of-type(4) {
+    animation-duration: 8s;
+}
+
+.cloud:nth-of-type(5) {
+    animation-duration: 3s;
+    animation-direction: reverse;
+}
+
+.cloud:nth-of-type(6) {
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+}
+
+.cloud:nth-of-type(7) {
+    animation-duration: 5s;
+}
+
+
+
+  @keyframes move {
+    0% {
+      transform: translatex(0);
+    }
+    50% {
+      transform: translatex(-40px);
+    }
+
+    100% {
+        transform: translatex(0); 
+    }
+  }
+
+.fs-container {
+    width: var(--width);
+    height: 100vh;
+    position: absolute;
+    pointer-events: none;
+}
+
+.fs-container * {
+    pointer-events: initial;
+}
+
+.cabin-light {
+    left: 640px;
+    bottom: 62px;
+    height: 2px;
+    width: 2px;
+    background-color: rgb(223 152 19 / 48%);
+    z-index: 20;
+    border-radius: 100%;
+    box-shadow: 2px 2px 20px 20px rgb(223 152 19 / 70%);
+    animation: glow 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 2px 2px 20px 20px rgba(223, 152, 19, 0.2);
+    }
+
+    50% {
+        box-shadow: 2px 2px 30px 30px rgba(223, 152, 19, 0.796);
+    }
+
+    100% {
+        box-shadow: 2px 2px 20px 20px rgba(223, 152, 19, 0.2);
+    }
+}
+
+.smoke-puff {
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    width: 50px;
+    animation: smoke-puff 7s ease-in infinite;
+}
+
+.smoke-puff:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.smoke-puff:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes smoke-puff {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) translateX(-20px);
+    }
+}
+
+@keyframes launch {
+    0% {
+        transform: rotate(0deg) rotateY(180deg) translateX(0px);
+    }
+
+    10% {
+        transform: rotate(35deg) rotateY(180deg) translateX(0px);
+    }
+
+    100% {
+        transform: rotate(35deg) rotateY(180deg) translateX(400vh);
+    }
+}
+
+.sled {
+    transform: rotate(0deg) rotateY(180deg);
+}
+
+.launch {
+    animation: launch 3s ease-in forwards;
+}

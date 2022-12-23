@@ -23,44 +23,44 @@
 </head>
 
 <body>
-    <div class="material-symbols-outlined list">
+    <div class="material-symbols-outlined list" onclick="showChecklist()">
         format_list_bulleted
     </div>
     <div class="checklist-container">
-        <div class="checklist">
+        <div class="checklist hidden">
             <ul id="checklist-items">
-                <li>Popped a Balloon</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-                <li>Test 123</li>
-
-
-            </ul>    
+                <li data-reveal="Played Christmas Music" id="cl-music">???</li>
+                <li data-reveal="Popped a Balloon" id="cl-balloon">???</li>
+                <li data-reveal="Talked to the Snowman" id="cl-snowman">???</li>
+                <li data-reveal="Shook the Snow Off of a Tree" id="cl-tree">???</li>
+                <li data-reveal="Made the Train Whistle" id="cl-train">???</li>
+                <li data-reveal="Made It Snow" id="cl-snow">???</li>
+                <li data-reveal="Lit Up the Cabin" id="cl-cabin">???</li>
+                <li data-reveal="Launched the Sled Off the Train Station" id="cl-sled">???</li>
+            </ul>
+            <button onclick="hideChecklist()">
+                Close
+            </button>
         </div>
     </div>
-    <div class="intro" onclick="closeIntro()" style="display: none;">
+    <div class="intro" onclick="closeIntro()">
         <div class="scroll-y">
             <p class="merry-christmas">
                 Merry Christmas!
             </p>
-            <p class="merry-christmas" style="font-size: 1.5rem;">
+            <p class="merry-christmas" style="font-size: 2.5rem;">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, aliquam? Deserunt, mollitia libero! In accusantium distinctio sint molestias sapiente inventore, soluta itaque. Voluptates non delectus iusto consectetur adipisci molestias quibusdam.
             </p>
             <button>Play</button>
         </div>
     </div>
     <div class="container" onclick="playMusic()">
+        <div class="fs-container" id="clouds">
+            <div class="cloud" style="position: absolute;" data-repeat data-repeat-x-range-min="250" data-repeat-x-range-max="500" data-repeat-y-range-min="0" data-repeat-y-range-max="-100" data-repeat-y-property="top" onclick="makeItSnow()">
+                <img src="assets/cloud.png">
+            </div>
+        </div>
+
         <!-- merry christmas! -->
         <div style="position: fixed; width: 100vw; text-align: center; z-index: 9999; pointer-events: none;" >
 
@@ -174,7 +174,7 @@
         </div>
 
         <!-- snowman -->
-        <div class="on-ground z5" style="left: 800px">
+        <div class="on-ground z5" style="left: 800px" onclick="merryGayXmas()">
             <img src="assets/snowman.png" alt="">
         </div>
 
@@ -197,15 +197,30 @@
             <img src="assets/cabinWall.png" alt="">
         </div>
 
-        <div class="on-ground z4" style="left: 610px">
+        <div class="on-ground z4" style="left: 550px; bottom: 130px;">
+            <div style="position: relative;" class="hidden" id="smoke-puffs">
+                <img src="assets/smoke-puff.png" class="hidden" alt="">
+                <img src="assets/smoke-puff.png" class="hidden" alt="">
+                <img src="assets/smoke-puff.png" class="hidden" alt="">
+            </div>
+        </div>
+
+        <div class="on-ground z4" style="left: 610px" onclick="turnOnCabin()">
             <img src="assets/cabinDoor.png" alt="">
         </div>
         <div class="on-ground z4" style="left: 520px; bottom: 90px">
             <img src="assets/cabinRoofCenter.png" alt="">
         </div>
+        <div class="on-ground z4" style="left: 520px; bottom: 90px; transform: rotateY(180deg) skewX(-31deg);">
+            <img src="assets/cabinRoofChimney.png" alt="">
+        </div>
         <div class="on-ground z4" style="left: 630px; bottom: 110px">
             <img src="assets/wreath.png" alt="">
         </div>
+        <div class="on-ground z5 hidden" id="cabin-light">
+        </div>
+
+
 
         <!-- candy cane! -->
         <div class="on-ground" style="left: 0px; bottom: 30px;" data-repeat data-repeat-x-range-min="50" data-repeat-x-range-max="75" data-repeat-y-range-min="-5" data-repeat-y-range-max="-10">
@@ -240,6 +255,13 @@
                 Have a gay christmas!
             </div>
             <img src="assets/pride_flag.gif" style="width: 35px;">
+        </div>
+
+        <div class="on-ground z5" style="left: 2270px; bottom: 140px;">
+            <div style="position: relative;" id="sled" onclick="launchSled()">
+                <img src="assets/sled.png" style="position: absolute;" class="sled">
+                <img src="assets/present.png" style="position: absolute; bottom: 1px; left: 25px; width: 25px;" class="sled">
+            </div>
         </div>
         <div class="ground"></div>
         <div id="particles-js"></div>
