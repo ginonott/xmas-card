@@ -8,20 +8,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="material-symbols-outlined list">
+        format_list_bulleted
+    </div>
+    <div class="checklist-container">
+        <div class="checklist">
+            <ul id="checklist-items">
+                <li>Popped a Balloon</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+                <li>Test 123</li>
+
+
+            </ul>    
+        </div>
+    </div>
+    <div class="intro" onclick="closeIntro()" style="display: none;">
+        <div class="scroll-y">
+            <p class="merry-christmas">
+                Merry Christmas!
+            </p>
+            <p class="merry-christmas" style="font-size: 1.5rem;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, aliquam? Deserunt, mollitia libero! In accusantium distinctio sint molestias sapiente inventore, soluta itaque. Voluptates non delectus iusto consectetur adipisci molestias quibusdam.
+            </p>
+            <button>Play</button>
+        </div>
+    </div>
     <div class="container" onclick="playMusic()">
         <!-- merry christmas! -->
         <div style="position: fixed; width: 100vw; text-align: center; z-index: 9999; pointer-events: none;" >
-            <p style="font-size: 5rem;">
-                Merry Christmas!<br>
-                (Click me!)
-            </p>
+
         </div>
         <div class="border">
 
@@ -132,7 +174,7 @@
         </div>
 
         <!-- snowman -->
-        <div class="on-ground z3" style="left: 800px">
+        <div class="on-ground z5" style="left: 800px">
             <img src="assets/snowman.png" alt="">
         </div>
 
@@ -192,6 +234,12 @@
             <img src="assets/presentGreen.png" style="position: absolute; bottom: 25px; right: 10px;">
             <img src="assets/present.png" style="position: absolute; bottom: 35px; right: 20px;">
             <img src="assets/presentGreen.png" style="position: absolute; bottom: 45px; right: 5px;">
+        </div>
+        <div class="on-ground z4" style="left: 835px; bottom: 46px;" id="gay-christmas">
+            <div class="speech-bubble hidden" style="position: absolute; bottom: 65px; width: 200px; left: -95px; border: 1px dashed red; font-size: 1.2rem;">
+                Have a gay christmas!
+            </div>
+            <img src="assets/pride_flag.gif" style="width: 35px;">
         </div>
         <div class="ground"></div>
         <div id="particles-js"></div>

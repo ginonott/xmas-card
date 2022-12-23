@@ -164,3 +164,7 @@ document.querySelector('.container').style.height = `${window.innerHeight}px`;
 window.onresize = () => {
     document.querySelector('.container').style.height = `${window.innerHeight}px`;
 }
+
+function closeIntro() {
+    document.querySelector('.intro').classList.add('slide-out')
+}
