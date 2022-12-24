@@ -28,21 +28,21 @@
     </div>
     <div class="checklist-container">
         <div class="checklist hidden">
-            <p>
-                Santa's Secrets
-            </p>
-            <p class="hidden" id="win">
-                You found all of the secrets! 🎉
-            </p>
             <ul id="checklist-items">
+                <li class="dnone" id="win">
+                    You found all of the secrets! 🎉 
+                </li>
+                <li>Santa's Secrets</li>
+                <li>&nbsp;</li>
                 <li data-reveal="1. Played Christmas Music" id="cl-music">1. ???</li>
                 <li data-reveal="2. Popped a Balloon" id="cl-balloon">2. ???</li>
                 <li data-reveal="3. Talked to the Snowman" id="cl-snowman">3. ???</li>
-                <li data-reveal="4. Shook the Snow Off of a Tree" id="cl-tree">4. ???</li>
+                <li data-reveal="4. Knocked Snow From a Tree" id="cl-tree">4. ???</li>
                 <li data-reveal="5. Made the Train Whistle" id="cl-train">5. ???</li>
                 <li data-reveal="6. Made It Snow" id="cl-snow">6. ???</li>
                 <li data-reveal="7. Lit Up the Cabin" id="cl-cabin">7. ???</li>
-                <li data-reveal="8. Launched the Sled Off the Train Station" id="cl-sled">8. ???</li>
+                <li data-reveal="8. Launched the Sled" id="cl-sled">8. ???</li>
+                <li>&nbsp;</li>
             </ul>
             <button onclick="hideChecklist()">
                 Close
@@ -51,15 +51,43 @@
     </div>
     <div class="intro" onclick="closeIntro()">
         <div class="scroll-y">
-            <p class="merry-christmas">
-                Merry Christmas!
-            </p>
-            <p class="merry-christmas" style="font-size: 2.5rem;">
-                Since you love Christmas so much that you own multiple ugly Christmas sweaters, I hope you enjoy this hand made winter wonderland. There are 8 secret objects to click. You can see your progress
-                by clicking on the candy cane note icon in the top right corner. Hint: turn up your volume! <br>
-                Have fun, I love you, and Merry Christmas,<br>
-                Gino, Katnis, and Chloe
-            </p>
+            <ul class="merry-christmas v-small">
+                <li style="font-size: 3rem;">Merry Christmas!</li>
+                <li>&nbsp;</li>
+                <li>Since you love Christmas 
+                <li>so much that you own multiple</li>
+                <li>ugly Christmas sweaters, I hope</li>
+                <li>you enjoy this hand made winter</li>
+                <li>wonderland.</li>
+                <li>&nbsp;</li>
+                <li>There are 8 secret objects to </li>
+                <li>click. You can see your progress</li>
+                <li>by clicking on the candy cane</li>
+                <li>note icon in the top right</li>
+                <li>corner.</li>
+                <li>&nbsp;</li>
+                <li>Hint: turn up your volume!</li>
+                <li>&nbsp;</li>
+                <li>Love,</li>
+                <li>Gino, Katnis, and Chloe</li>
+            </ul>
+
+            <ul class="merry-christmas v-large">
+                <li style="font-size: 3rem;">Merry Christmas!</li>
+                <li>&nbsp;</li>
+                <li>Since you love Christmas so much that you own multiple
+                <li>ugly Christmas sweaters, I hope you enjoy this hand made winter</li>
+                <li>wonderland.</li>
+                <li>&nbsp;</li>
+                <li>There are 8 secret objects to click. You can see your progress</li>
+                <li>by clicking on the candy cane note icon in the top right</li>
+                <li>corner.</li>
+                <li>&nbsp;</li>
+                <li>Hint: turn up your volume!</li>
+                <li>&nbsp;</li>
+                <li>Love,</li>
+                <li>Gino, Katnis, and Chloe</li>
+            </ul>
             <button>Play</button>
         </div>
     </div>
@@ -247,6 +275,11 @@
             <img src="assets/trainWagon.png" >
             <img src="assets/trainTender.png">
             <img src="assets/trainLocomotive.png" >
+            <div style="position: absolute; right: 15px; bottom: 15px;">
+                <img src="assets/smoke-puff.png" style="width: 15px" class="smoke-puff" alt="">
+                <img src="assets/smoke-puff.png" style="width: 15px" class="smoke-puff" alt="">
+                <img src="assets/smoke-puff.png" style="width: 15px" class="smoke-puff" alt="">
+            </div>
         </div>
 
         <div class="on-ground z5" style="left: calc(var(--width) - 350px)">

@@ -33,7 +33,7 @@ function revealCL(id) {
 
     if (Object.values(progress).reduce((prev, curr) => prev && curr) && !hasWon) {
         hasWon = true;
-        document.querySelector('#win').classList.remove('hidden');
+        document.querySelector('#win').classList.remove('dnone');
         showChecklist();
         winSound.play();
     }
@@ -235,6 +235,8 @@ function merryGayXmas() {
     revealCL('cl-snowman');
 }
 
+const knock = new Audio('assets/knock.mp4');
+let knockPlayed = false;
 function turnOnCabin() {
     const light = document.querySelector('#cabin-light');
     light.classList.toggle('hidden');
@@ -245,6 +247,14 @@ function turnOnCabin() {
     for (const element of smokePuffList.children) {
         element.classList.toggle('hidden');
         element.classList.add('smoke-puff');
+    }
+
+    if (!knockPlayed) {
+        knock.play();
+        knockPlayed = true;
+        setTimeout(() => {
+            knock.pause();
+        }, 3000);
     }
 
     revealCL('cl-cabin');

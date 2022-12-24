@@ -40,6 +40,7 @@
 }
 
 .train {
+    position: relative;
     animation: train 45s ease infinite;
 }
 
@@ -142,15 +143,6 @@ body {
     z-index: 10;
 }
 
-.intro {
-    position: absolute;
-    background-color: antiquewhite;
-    width: 100vw;
-    height: 100vh;
-    z-index: 20;
-    padding: 1rem;
-}
-
 .on-ground {
     position: absolute;
     bottom: 10px;
@@ -217,7 +209,6 @@ p {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 6rem;
 }
 
 button {
@@ -457,12 +448,13 @@ button:hover {
     background-color: lemonchiffon;
     font-size: 2rem;
     padding: 24px;
-    width: 80vw;
+    width: 393px;
     max-height: 80vh;
     overflow-y: scroll;
     pointer-events: all;
     color: red;
     font-weight: bold;
+    box-shadow: 1px 2px 4px 2px rgb(110, 105, 63);
   }
 
   .checklist::-webkit-scrollbar {
@@ -485,7 +477,7 @@ button:hover {
     margin-bottom: 2rem;
  }
 
-.checklist ul > li::before {
+.checklist ul > li:nth-child(even)::before {
     content: "";
     width: 18px;
     height: 18px;
@@ -495,6 +487,44 @@ button:hover {
     border-radius: 100%;
     left: 0px;
     vertical-align: middle;
+ }
+
+ .intro {
+    position: absolute;
+    background-color: lemonchiffon;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    padding: 1rem;
+    overflow-y: scroll;
+    font-size: 2rem;
+}
+
+.intro::-webkit-scrollbar {
+    background-color: lemonchiffon
+}
+
+ .intro ul > li:nth-child(even)::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: rgb(50, 50, 50);
+    box-shadow: inset 0px -3px black;
+    position: absolute;
+    border-radius: 100%;
+    left: 0px;
+    vertical-align: middle;
+ }
+
+ .intro ul li {
+    border-bottom: 2px dashed #1488CC;
+    text-align: left;
+    margin-bottom: 1rem;
+ }
+
+ .intro ul {
+    list-style: none;
+    position: relative;
  }
   
 .cloud {
@@ -590,6 +620,7 @@ button:hover {
     bottom: 10px;
     width: 50px;
     animation: smoke-puff 7s ease-in infinite;
+    pointer-events: none;
 }
 
 .smoke-puff:nth-child(2) {
@@ -631,4 +662,20 @@ button:hover {
 
 .launch {
     animation: launch 3s ease-in forwards;
+}
+
+@media (max-width: 699px) {
+    .v-large {
+        display: none;
+    }
+}
+
+@media (min-width: 700px) {
+    .v-small {
+        display: none;
+    }
+}
+
+.dnone {
+    display: none;
 }
