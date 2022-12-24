@@ -448,7 +448,7 @@ button:hover {
     background-color: lemonchiffon;
     font-size: 2rem;
     padding: 24px;
-    width: 393px;
+    width: 80vw;
     max-height: 80vh;
     overflow-y: scroll;
     pointer-events: all;
