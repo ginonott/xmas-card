@@ -23,20 +23,26 @@
 </head>
 
 <body>
-    <div class="material-symbols-outlined list" onclick="showChecklist()">
+    <div class="material-symbols-outlined list" onclick="toggleChecklist()">
         format_list_bulleted
     </div>
     <div class="checklist-container">
         <div class="checklist hidden">
+            <p>
+                Santa's Secrets
+            </p>
+            <p class="hidden" id="win">
+                You found all of the secrets! 🎉
+            </p>
             <ul id="checklist-items">
-                <li data-reveal="Played Christmas Music" id="cl-music">???</li>
-                <li data-reveal="Popped a Balloon" id="cl-balloon">???</li>
-                <li data-reveal="Talked to the Snowman" id="cl-snowman">???</li>
-                <li data-reveal="Shook the Snow Off of a Tree" id="cl-tree">???</li>
-                <li data-reveal="Made the Train Whistle" id="cl-train">???</li>
-                <li data-reveal="Made It Snow" id="cl-snow">???</li>
-                <li data-reveal="Lit Up the Cabin" id="cl-cabin">???</li>
-                <li data-reveal="Launched the Sled Off the Train Station" id="cl-sled">???</li>
+                <li data-reveal="1. Played Christmas Music" id="cl-music">1. ???</li>
+                <li data-reveal="2. Popped a Balloon" id="cl-balloon">2. ???</li>
+                <li data-reveal="3. Talked to the Snowman" id="cl-snowman">3. ???</li>
+                <li data-reveal="4. Shook the Snow Off of a Tree" id="cl-tree">4. ???</li>
+                <li data-reveal="5. Made the Train Whistle" id="cl-train">5. ???</li>
+                <li data-reveal="6. Made It Snow" id="cl-snow">6. ???</li>
+                <li data-reveal="7. Lit Up the Cabin" id="cl-cabin">7. ???</li>
+                <li data-reveal="8. Launched the Sled Off the Train Station" id="cl-sled">8. ???</li>
             </ul>
             <button onclick="hideChecklist()">
                 Close
@@ -49,12 +55,22 @@
                 Merry Christmas!
             </p>
             <p class="merry-christmas" style="font-size: 2.5rem;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, aliquam? Deserunt, mollitia libero! In accusantium distinctio sint molestias sapiente inventore, soluta itaque. Voluptates non delectus iusto consectetur adipisci molestias quibusdam.
+                Since you love Christmas so much that you own multiple ugly Christmas sweaters, I hope you enjoy this hand made winter wonderland. There are 8 secret objects to click. You can see your progress
+                by clicking on the candy cane note icon in the top right corner. Hint: turn up your volume! <br>
+                Have fun, I love you, and Merry Christmas,<br>
+                Gino, Katnis, and Chloe
             </p>
             <button>Play</button>
         </div>
     </div>
-    <div class="container" onclick="playMusic()">
+    <div class="container">
+        <div class="on-ground" style="width: var(--width); height: 200px; background: url('assets/snowy_mountains.png'); background-repeat-y: no-repeat; background-repeat-x: repeat;">
+        </div>
+
+        <div class="on-ground z0" style="bottom: 100px; left: 130px;" onclick="playMusic()">
+            <img src="assets/treeDecorated.png" style="width: 25px;">
+        </div>
+
         <div class="fs-container" id="clouds">
             <div class="cloud" style="position: absolute;" data-repeat data-repeat-x-range-min="250" data-repeat-x-range-max="500" data-repeat-y-range-min="0" data-repeat-y-range-max="-100" data-repeat-y-property="top" onclick="makeItSnow()">
                 <img src="assets/cloud.png">
@@ -62,9 +78,6 @@
         </div>
 
         <!-- merry christmas! -->
-        <div style="position: fixed; width: 100vw; text-align: center; z-index: 9999; pointer-events: none;" >
-
-        </div>
         <div class="border">
 
             <ul class="lightrope">
@@ -143,8 +156,7 @@
               </ul>
         </div>
 
-        <div class="on-ground" style="width: var(--width); height: 200px; background: url('assets/snowy_mountains.png'); background-repeat-y: no-repeat; background-repeat-x: repeat;">
-        </div>
+
         
         <!-- trees -->
         <div class="on-ground" style="position: absolute; left: 0px;" data-repeat data-repeat-x-range-min="125" data-repeat-x-range-max="150" data-repeat-y-range-min="0" data-repeat-y-range-max="50">
@@ -197,7 +209,7 @@
             <img src="assets/cabinWall.png" alt="">
         </div>
 
-        <div class="on-ground z4" style="left: 550px; bottom: 130px;">
+        <div class="on-ground z4" style="left: 550px; bottom: 130px; pointer-events: none;">
             <div style="position: relative;" class="hidden" id="smoke-puffs">
                 <img src="assets/smoke-puff.png" class="hidden" alt="">
                 <img src="assets/smoke-puff.png" class="hidden" alt="">
@@ -263,6 +275,7 @@
                 <img src="assets/present.png" style="position: absolute; bottom: 1px; left: 25px; width: 25px;" class="sled">
             </div>
         </div>
+
         <div class="ground"></div>
         <div id="particles-js"></div>
     </div>

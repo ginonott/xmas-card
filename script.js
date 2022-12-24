@@ -1,9 +1,42 @@
 const elements = document.querySelectorAll('[data-repeat]');
 const maxWidth = parseInt(getComputedStyle(document.body).getPropertyValue('--width').split('px')[0]) - 200;
 
+const secretKeys = ['cl-music', 'cl-balloon', 'cl-snowman', 'cl-tree', 'cl-train', 'cl-snow', 'cl-cabin', 'cl-sled'];
+
+function loadProgress() {
+    if (!localStorage.getItem('progress')) {
+        const p = {};
+        for (const k of secretKeys) {
+            p[k] = false;
+        }
+
+        localStorage.setItem('progress', JSON.stringify(p));
+    }
+
+    return JSON.parse(localStorage.getItem('progress'));
+}
+
+function saveProgress(progress) {
+    localStorage.setItem('progress', JSON.stringify(progress));
+}
+
+const progress = loadProgress();
+let hasWon = false;
+
+const winSound = new Audio('assets/win.wav');
+
 function revealCL(id) {
+    progress[id] = true;
     const element = document.getElementById(id);
     element.innerText = element.dataset.reveal;
+    saveProgress(progress);
+
+    if (Object.values(progress).reduce((prev, curr) => prev && curr) && !hasWon) {
+        hasWon = true;
+        document.querySelector('#win').classList.remove('hidden');
+        showChecklist();
+        winSound.play();
+    }
 }
 
 function getRandRange(min, max) {
@@ -98,11 +131,24 @@ window.onresize = () => {
 }
 
 function closeIntro() {
-    document.querySelector('.intro').classList.add('slide-out')
+    document.querySelector('.intro').classList.add('slide-out');
+    // set checklist
+    setTimeout(() => {
+        for (const k of secretKeys) {
+            if (progress[k]) {
+                revealCL(k);
+            }
+        };
+    }, 5000);
+}
+
+function toggleChecklist() {
+    document.querySelector('.checklist').classList.toggle('hidden');
+
 }
 
 function showChecklist() {
-    document.querySelector('.checklist').classList.toggle('hidden');
+    document.querySelector('.checklist').classList.remove('hidden');
 }
 
 function hideChecklist() {

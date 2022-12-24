@@ -148,6 +148,7 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: 20;
+    padding: 1rem;
 }
 
 .on-ground {
