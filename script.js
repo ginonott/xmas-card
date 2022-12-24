@@ -235,7 +235,7 @@ function merryGayXmas() {
     revealCL('cl-snowman');
 }
 
-const knock = new Audio('assets/knock.mp4');
+const knock = new Audio('assets/knock.mp3');
 let knockPlayed = false;
 function turnOnCabin() {
     const light = document.querySelector('#cabin-light');
