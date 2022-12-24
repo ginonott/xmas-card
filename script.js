@@ -139,7 +139,7 @@ function closeIntro() {
                 revealCL(k);
             }
         };
-    }, 5000);
+    }, 2500);
 }
 
 function toggleChecklist() {
